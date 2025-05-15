@@ -1,4 +1,8 @@
 import streamlit as st
+
+st.set_page_config(layout="wide")
+st.title("🔮 PHL Prediction Tool")
+
 import pandas as pd
 import numpy as np
 from sklearn.ensemble import RandomForestRegressor
@@ -17,9 +21,6 @@ def load_data():
     return df
 
 df = load_data()
-
-st.set_page_config(layout="wide")
-st.title("🔮 PHL Prediction Tool")
 
 # Train model
 @st.cache_resource
