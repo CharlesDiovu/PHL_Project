@@ -96,42 +96,42 @@ with tab2:
 with tab3:
     st.header("Climate Impact on PHL")
     
-col1, col2 = st.columns(2)
-
-with col1:
-    st.subheader("PHL vs Rainfall")
-    try:
-        # Check if required columns exist
-        if all(col in df.columns for col in ["Avg Rainfall", "AVERAGE PHL (%)", "Risk Score"]):
-            fig = px.scatter(
-                df,
-                x="Avg Rainfall",
-                y="AVERAGE PHL (%)",
-                color="Risk Score",
-                trendline="lowess",
-                title="PHL vs Average Rainfall"
-            )
-            st.plotly_chart(fig, use_container_width=True)
-        else:
-            st.warning("Missing required columns for Rainfall visualization")
-    except Exception as e:
-        st.error(f"Error creating Rainfall plot: {str(e)}")
-
-with col2:
-    st.subheader("PHL vs Temperature")
-    try:
-        # Check if required columns exist
-        if all(col in df.columns for col in ["Avg Temp", "AVERAGE PHL (%)", "Risk Score"]):
-            fig = px.scatter(
-                df,
-                x="Avg Temp",
-                y="AVERAGE PHL (%)",
-                color="Risk Score",
-                trendline="lowess",
-                title="PHL vs Average Temperature"
-            )
-            st.plotly_chart(fig, use_container_width=True)
-        else:
-            st.warning("Missing required columns for Temperature visualization")
-    except Exception as e:
-        st.error(f"Error creating Temperature plot: {str(e)}")
+    col1, col2 = st.columns(2)
+    
+    with col1:
+        st.subheader("PHL vs Rainfall")
+        try:
+            # Check if required columns exist
+            if all(col in df.columns for col in ["Avg Rainfall", "AVERAGE PHL (%)", "Risk Score"]):
+                fig = px.scatter(
+                    df,
+                    x="Avg Rainfall",
+                    y="AVERAGE PHL (%)",
+                    color="Risk Score",
+                    trendline="lowess",
+                    title="PHL vs Average Rainfall"
+                )
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.warning("Missing required columns for Rainfall visualization")
+        except Exception as e:
+            st.error(f"Error creating Rainfall plot: {str(e)}")
+    
+    with col2:
+        st.subheader("PHL vs Temperature")
+        try:
+            # Check if required columns exist
+            if all(col in df.columns for col in ["Avg Temp", "AVERAGE PHL (%)", "Risk Score"]):
+                fig = px.scatter(
+                    df,
+                    x="Avg Temp",
+                    y="AVERAGE PHL (%)",
+                    color="Risk Score",
+                    trendline="lowess",
+                    title="PHL vs Average Temperature"
+                )
+                st.plotly_chart(fig, use_container_width=True)
+            else:
+                st.warning("Missing required columns for Temperature visualization")
+        except Exception as e:
+            st.error(f"Error creating Temperature plot: {str(e)}")
