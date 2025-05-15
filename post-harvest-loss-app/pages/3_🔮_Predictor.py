@@ -8,7 +8,7 @@ from sklearn.metrics import mean_absolute_error
 # Load data
 @st.cache_data
 def load_data():
-    df = pd.read_csv("data/merged_crop_climate_data.csv")
+    df = pd.read_csv("post-harvest-loss-app/data/merged_crop_climate_data.csv")
     
     # Convert risk score to numerical value
     risk_map = {"Low": 1, "Medium": 2, "High": 3}
