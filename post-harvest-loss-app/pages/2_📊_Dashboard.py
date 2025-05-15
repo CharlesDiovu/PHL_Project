@@ -1,3 +1,6 @@
+st.set_page_config(layout="wide")
+st.title("📊 Post-Harvest Loss Risk Dashboard")
+
 import streamlit as st
 import pandas as pd
 import plotly.express as px
@@ -8,9 +11,6 @@ def load_data():
     return pd.read_csv("post-harvest-loss-app/data/merged_crop_climate_data.csv")
 
 df = load_data()
-
-st.set_page_config(layout="wide")
-st.title("📊 Post-Harvest Loss Risk Dashboard")
 
 # Filters
 st.sidebar.header("Filters")
